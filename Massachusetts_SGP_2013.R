@@ -29,7 +29,6 @@ Massachusetts_SGP <- prepareSGP(Massachusetts_SGP)
 
 Massachusetts_SGP <- analyzeSGP(Massachusetts_SGP,
 			years="2013",
-			content_areas="ELA",
 			sgp.percentiles=TRUE,
 			sgp.projections=FALSE,
 			sgp.projections.lagged=FALSE,
