@@ -44,7 +44,7 @@ save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
 
 ### combineSGP
 
-Massachusetts_SGP <- combineSGP(Massachusetts_SGP)
+Massachusetts_SGP <- combineSGP(Massachusetts_SGP, years="2014")
 
 
 ### save results
