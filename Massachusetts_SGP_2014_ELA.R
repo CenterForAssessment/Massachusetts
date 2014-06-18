@@ -34,8 +34,8 @@ Massachusetts_SGP <- analyzeSGP(Massachusetts_SGP,
 			sgp.percentiles=TRUE,
 			sgp.projections=FALSE,
 			sgp.projections.lagged=FALSE,
-			sgp.percentiles.baseline=TRUE,
-			sgp.projections.baseline=TRUE,
+			sgp.percentiles.baseline=FALSE,
+			sgp.projections.baseline=FALSE,
 			sgp.projections.lagged.baseline=TRUE)
 #			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=10, BASELINE_PERCENTILES=10, PROJECTIONS=10, LAGGED_PROJECTIONS=10)))
 
