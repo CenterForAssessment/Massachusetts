@@ -18,7 +18,7 @@ load("Data/Massachusetts_Data_LONG_2015.Rdata")
 
 ### Merge 2015 data with prior data
 
-Massachusetts_SGP@Data <- rbind.fill(Massachusetts_SGP@Data, Massachusetts_Data_LONG_2015)
+Massachusetts_SGP@Data <- rbindlist(list(Massachusetts_SGP@Data, Massachusetts_Data_LONG_2015), fill=TRUE)
 
 
 ### prepareSGP
