@@ -73,7 +73,7 @@ Massachusetts_SGP <- combineSGP(Massachusetts_SGP, years="2015")
 
 ### outputSGP
 
-outputSGP(Massachusetts_SGP)
+outputSGP(Massachusetts_SGP, output.type=c("LONG_Data", "LONG_FINAL_YEAR_Data"))
 
 
 ### save results
