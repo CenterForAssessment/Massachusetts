@@ -33,6 +33,7 @@ Massachusetts_Data_LONG_2015_ELA[,RAW_SCORE:=NULL]
 levels(Massachusetts_Data_LONG_2015_ELA$ID) <- sapply(levels(Massachusetts_Data_LONG_2015_ELA$ID), capwords)
 Massachusetts_Data_LONG_2015_ELA[,ID := as.character(ID)]
 levels(Massachusetts_Data_LONG_2015_ELA$ACHIEVEMENT_LEVEL) <- sapply(levels(Massachusetts_Data_LONG_2015_ELA$ACHIEVEMENT_LEVEL), capwords)
+levels(Massachusetts_Data_LONG_2015_ELA$ACHIEVEMENT_LEVEL)[4] <- "Warning/Failing"
 Massachusetts_Data_LONG_2015_ELA[,ACHIEVEMENT_LEVEL := as.character(ACHIEVEMENT_LEVEL)]
 
 Massachusetts_Data_LONG_2015_ELA[,GRADE:= as.character(as.numeric(as.character(GRADE)))]
