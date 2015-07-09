@@ -13,7 +13,7 @@ require(SGP)
 
 ### Load data
 
-Massachusetts_Data_LONG_2015_ELA <- as.data.table(read.spss("Data/Base_Files/MCAS2015_ELA.sav", to.data.frame=TRUE, trim.factor.names = TRUE))
+Massachusetts_Data_LONG_2015_ELA <- as.data.table(read.spss("Data/Base_Files/MCAS2015_ELA_8.sav", to.data.frame=TRUE, trim.factor.names = TRUE))
 
 
 ### Change names
@@ -24,7 +24,7 @@ setnames(Massachusetts_Data_LONG_2015_ELA, c("ID", "GRADE", "RAW_SCORE", "TEST_S
 
 ### Tidy Up Data
 
-levels(Massachusetts_Data_LONG_2015_ELA$TEST_STATUS) <- toupper(sapply(levels(Massachusetts_Data_LONG_2015_ELA$TEST_STATUS), capwords))
+levels(Massachusetts_Data_LONG_2015_ELA$TEST_STATUS) <- c("", "NTA", "NTL", "NTM", "NTO", "T", "TR")
 Massachusetts_Data_LONG_2015_ELA <- subset(Massachusetts_Data_LONG_2015_ELA, TEST_STATUS=="T")
 Massachusetts_Data_LONG_2015_ELA[,TEST_STATUS:=NULL]
 
@@ -32,8 +32,8 @@ Massachusetts_Data_LONG_2015_ELA[,RAW_SCORE:=NULL]
 
 levels(Massachusetts_Data_LONG_2015_ELA$ID) <- sapply(levels(Massachusetts_Data_LONG_2015_ELA$ID), capwords)
 Massachusetts_Data_LONG_2015_ELA[,ID := as.character(ID)]
-levels(Massachusetts_Data_LONG_2015_ELA$ACHIEVEMENT_LEVEL) <- sapply(levels(Massachusetts_Data_LONG_2015_ELA$ACHIEVEMENT_LEVEL), capwords)
-levels(Massachusetts_Data_LONG_2015_ELA$ACHIEVEMENT_LEVEL)[4] <- "Warning/Failing"
+
+levels(Massachusetts_Data_LONG_2015_ELA$ACHIEVEMENT_LEVEL) <- c(NA, "Advanced", "Needs Improvement", "Proficient", "Warning/Failing")
 Massachusetts_Data_LONG_2015_ELA[,ACHIEVEMENT_LEVEL := as.character(ACHIEVEMENT_LEVEL)]
 
 Massachusetts_Data_LONG_2015_ELA[,GRADE:= as.character(as.numeric(as.character(GRADE)))]
@@ -45,8 +45,7 @@ Massachusetts_Data_LONG_2015_ELA[,VALID_CASE:=as.character(VALID_CASE)]
 Massachusetts_Data_LONG_2015_ELA[is.na(VALID_CASE), VALID_CASE:="INVALID_CASE"]
 Massachusetts_Data_LONG_2015_ELA[VALID_CASE==1, VALID_CASE:="VALID_CASE"]
 
-Massachusetts_Data_LONG_2015_ELA[is.na(SCALE_SCORE), SCALE_SCORE:=-6.682260154]
 
 ### Save results
 
-save(Massachusetts_Data_LONG_2015_ELA, file="Data/Massachusetts_Data_LONG_2015_ELA.Rdata")
+#save(Massachusetts_Data_LONG_2015_ELA, file="Data/Massachusetts_Data_LONG_2015_ELA.Rdata")
