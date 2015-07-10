@@ -46,6 +46,11 @@ Massachusetts_Data_LONG_2015_MATHEMATICS[is.na(VALID_CASE), VALID_CASE:="INVALID
 Massachusetts_Data_LONG_2015_MATHEMATICS[VALID_CASE==1, VALID_CASE:="VALID_CASE"]
 
 
+### Remove records with no scale score
+
+Massachusetts_Data_LONG_2015_MATHEMATICS <- Massachusetts_Data_LONG_2015_MATHEMATICS[!is.na(SCALE_SCORE)]
+
+
 ### Save results
 
-#save(Massachusetts_Data_LONG_2015_MATHEMATICS, file="Data/Massachusetts_Data_LONG_2015_MATHEMATICS.Rdata")
+save(Massachusetts_Data_LONG_2015_MATHEMATICS, file="Data/Massachusetts_Data_LONG_2015_MATHEMATICS.Rdata")

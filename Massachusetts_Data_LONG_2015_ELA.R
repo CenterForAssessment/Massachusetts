@@ -46,6 +46,11 @@ Massachusetts_Data_LONG_2015_ELA[is.na(VALID_CASE), VALID_CASE:="INVALID_CASE"]
 Massachusetts_Data_LONG_2015_ELA[VALID_CASE==1, VALID_CASE:="VALID_CASE"]
 
 
+### Remove records with no scale score
+
+Massachusetts_Data_LONG_2015_ELA <- Massachusetts_Data_LONG_2015_ELA[!is.na(SCALE_SCORE)]
+
+
 ### Save results
 
-#save(Massachusetts_Data_LONG_2015_ELA, file="Data/Massachusetts_Data_LONG_2015_ELA.Rdata")
+save(Massachusetts_Data_LONG_2015_ELA, file="Data/Massachusetts_Data_LONG_2015_ELA.Rdata")
