@@ -12,7 +12,7 @@ require(data.table)
 
 ### Load data
 
-load("Data/Massachusetts_SGP_Data_LONG.Rdata")
+load("Data/Massachusetts_SGP_LONG_Data.Rdata")
 load("Data/Massachusetts_Data_LONG_2015.Rdata")
 
 
