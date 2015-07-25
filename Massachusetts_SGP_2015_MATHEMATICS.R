@@ -12,7 +12,7 @@ require(data.table)
 
 ### Load data
 
-load("Data/Massachusetts_SGP.Rdata")
+load("Data/Massachusetts_SGP_Data_LONG.Rdata")
 load("Data/Massachusetts_Data_LONG_2015.Rdata")
 
 
@@ -36,8 +36,8 @@ Massachusetts_SGP <- analyzeSGP(Massachusetts_SGP,
 			sgp.projections.lagged=FALSE,
 			sgp.percentiles.baseline=FALSE,
 			sgp.projections.baseline=FALSE,
-			sgp.projections.lagged.baseline=FALSE,
-			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
+			sgp.projections.lagged.baseline=FALSE)#,
+#			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
 
 save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
 
@@ -60,8 +60,8 @@ Massachusetts_SGP <- analyzeSGP(Massachusetts_SGP,
 			sgp.percentiles.baseline=FALSE,
 			sgp.projections.baseline=FALSE,
 			sgp.projections.lagged.baseline=FALSE,
-			sgp.use.my.coefficient.matrices=list(my.year="2015", my.subject="MATHEMATICS"),
-			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
+			sgp.use.my.coefficient.matrices=list(my.year="2015", my.subject="MATHEMATICS"))#,
+#			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
 
 save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
 
