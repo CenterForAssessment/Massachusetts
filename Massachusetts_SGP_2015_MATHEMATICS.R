@@ -30,7 +30,7 @@ Massachusetts_SGP <- prepareSGP(Massachusetts_SGP)
 
 Massachusetts_SGP <- analyzeSGP(Massachusetts_SGP,
 			years="2015",
-			content_areass="MATHEMATICS",
+			content_areas="MATHEMATICS",
 			sgp.percentiles=TRUE,
 			sgp.projections=FALSE,
 			sgp.projections.lagged=FALSE,
