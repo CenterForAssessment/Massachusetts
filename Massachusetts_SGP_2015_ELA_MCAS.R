@@ -10,6 +10,11 @@ require(SGP)
 require(data.table)
 
 
+### NULL out assessment transition
+
+SGPstateData[["MA"]][["Assessment_Program_Information"]][["Assessment_Transition"]] <- NULL
+
+
 ### Load data
 
 load("Data/Massachusetts_SGP.Rdata")
