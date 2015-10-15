@@ -13,7 +13,7 @@ require(data.table)
 ### Load data
 
 load("Data/Massachusetts_SGP.Rdata")
-load("Data/Massachusetts_Data_LONG_2015.Rdata")
+load("Data/Massachusetts_Data_LONG_2015_MCAS.Rdata")
 
 
 ### Merge 2015 data with prior data
