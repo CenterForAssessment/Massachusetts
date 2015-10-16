@@ -46,18 +46,18 @@ Massachusetts_Data_LONG_2015_PARCC[,CONTENT_AREA:=as.character(CONTENT_AREA)]
 Massachusetts_Data_LONG_2015_PARCC[CONTENT_AREA %in% c("Mat03", "Mat04", "Mat05", "Mat06", "Mat07", "Mat08"), CONTENT_AREA:="MATHEMATICS"]
 Massachusetts_Data_LONG_2015_PARCC[CONTENT_AREA %in% c("Alg01-G8"), CONTENT_AREA:="ALGEBRA_I"]
 
-
-levels(Massachusetts_Data_LONG_2015_PARCC$ACHIEVEMENT_LEVEL) <- c(NA, "Advanced", "Needs Improvement", "Proficient", "Warning/Failing")
-Massachusetts_Data_LONG_2015_PARCC[,ACHIEVEMENT_LEVEL := as.character(ACHIEVEMENT_LEVEL)]
-
 Massachusetts_Data_LONG_2015_PARCC[,GRADE:= as.character(as.numeric(as.character(GRADE)))]
 
-Massachusetts_Data_LONG_2015_PARCC[,CONTENT_AREA:="ELA"]
+Massachusetts_Data_LONG_2015_PARCC[,ACHIEVEMENT_LEVEL := as.character(ACHIEVEMENT_LEVEL)]
+Massachusetts_Data_LONG_2015_PARCC[!is.na(ACHIEVEMENT_LEVEL), ACHIEVEMENT_LEVEL := paste("Level", ACHIEVEMENT_LEVEL)]
+
 Massachusetts_Data_LONG_2015_PARCC[,YEAR:="2015"]
 
 Massachusetts_Data_LONG_2015_PARCC[,VALID_CASE:=as.character(VALID_CASE)]
 Massachusetts_Data_LONG_2015_PARCC[is.na(VALID_CASE), VALID_CASE:="INVALID_CASE"]
 Massachusetts_Data_LONG_2015_PARCC[VALID_CASE==1, VALID_CASE:="VALID_CASE"]
+
+Massachusetts_Data_LONG_2015_PARCC[,ASSESSMENT_PROGRAM:="PARCC"]
 
 
 ### Remove records with no scale score
