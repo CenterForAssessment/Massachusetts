@@ -1,6 +1,6 @@
 ####################################################################
 ###
-### Massachusetts SGP data for 2015
+### Massachusetts SGP data for 2015 PARCC
 ###
 ####################################################################
 
@@ -13,7 +13,7 @@ require(data.table)
 ### Load data
 
 load("Data/Massachusetts_SGP_LONG_Data.Rdata")
-load("Data/Massachusetts_Data_LONG_2015_MATHEMATICS.Rdata")
+load("Data/Massachusetts_Data_LONG_2015_PARCC.Rdata")
 
 
 ### Merge 2015 data with prior data
