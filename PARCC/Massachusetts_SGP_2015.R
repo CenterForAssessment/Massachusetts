@@ -13,31 +13,38 @@ require(data.table)
 ### Load data
 
 load("Data/Massachusetts_SGP_LONG_Data.Rdata")
-load("Data/Massachusetts_Data_LONG_2015_PARCC.Rdata")
+load("Data/Massachusetts_Data_LONG_2015.Rdata")
 
 
 ### Merge 2015 data with prior data
 
-Massachusetts_SGP@Data <- rbindlist(list(Massachusetts_SGP@Data, Massachusetts_Data_LONG_2015), fill=TRUE)
+Massachusetts_SGP_LONG_Data <- rbindlist(list(Massachusetts_SGP_LONG_Data, Massachusetts_Data_LONG_2015), fill=TRUE)
+
+
+### Load configurations
+
+source("SGP_CONFIG/2015/ELA.R")
+source("SGP_CONFIG/2015/MATHEMATICS.R")
+MA_PARCC_CONFIG <- c(ELA_2015.config, MATHEMATICS_2015.config)
 
 
 ### prepareSGP
 
-Massachusetts_SGP <- prepareSGP(Massachusetts_SGP)
+Massachusetts_SGP <- prepareSGP(Massachusetts_SGP_LONG_Data)
 
 
 ### STEP 1: analyzeSGP with SAMPLE to generate coefficient matrices
 
 Massachusetts_SGP <- analyzeSGP(Massachusetts_SGP,
 			years="2015",
-			content_areas="MATHEMATICS",
 			sgp.percentiles=TRUE,
 			sgp.projections=FALSE,
 			sgp.projections.lagged=FALSE,
 			sgp.percentiles.baseline=FALSE,
 			sgp.projections.baseline=FALSE,
-			sgp.projections.lagged.baseline=FALSE)#,
-#			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
+			sgp.projections.lagged.baseline=FALSE,
+			sgp.config=MA_PARCC_CONFIG,
+			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
 
 save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
 
@@ -46,22 +53,25 @@ save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
 
 Massachusetts_SGP@Data$VALID_CASE[Massachusetts_SGP@Data$YEAR=="2015"] <- "VALID_CASE"
 Massachusetts_SGP@SGP$SGPercentiles$MATHEMATICS.2015 <- NULL
+Massachusetts_SGP@SGP$SGPercentiles$ELA.2015 <- NULL
+Massachusetts_SGP@SGP$SGPercentiles$ALGEBRA_I.2015 <- NULL
 Massachusetts_SGP@SGP$Goodness_of_Fit$MATHEMATICS.2015 <- NULL
-Massachusetts_SGP@SGP$Simulated_SGPs$MATHEMATICS.2015 <- NULL
+Massachusetts_SGP@SGP$Goodness_of_Fit$ELA.2015 <- NULL
+Massachusetts_SGP@SGP$Goodness_of_Fit$ALGEBRA_I.2015 <- NULL
 
 Massachusetts_SGP <- prepareSGP(Massachusetts_SGP)
 
 Massachusetts_SGP <- analyzeSGP(Massachusetts_SGP,
 			years="2015",
-			content_areas="MATHEMATICS",
 			sgp.percentiles=TRUE,
 			sgp.projections=FALSE,
 			sgp.projections.lagged=FALSE,
 			sgp.percentiles.baseline=FALSE,
 			sgp.projections.baseline=FALSE,
 			sgp.projections.lagged.baseline=FALSE,
-			sgp.use.my.coefficient.matrices=list(my.year="2015", my.subject="MATHEMATICS"))#,
-#			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
+			sgp.config=MA_PARCC_CONFIG,
+			sgp.use.my.coefficient.matrices=TRUE,
+			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=6)))
 
 save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
 
