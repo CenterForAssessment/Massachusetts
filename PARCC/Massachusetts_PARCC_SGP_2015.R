@@ -13,7 +13,7 @@ require(data.table)
 ### Load data
 
 load("Data/OLD_Data/Massachusetts_SGP_LONG_Data.Rdata")
-load("Data/OLD_Data/Massachusetts_Data_LONG_2015.Rdata")
+load("Data/OLD_Data/Massachusetts_PARCC_Data_LONG_2015.Rdata")
 
 
 ### Merge 2015 data with prior data
@@ -62,7 +62,6 @@ Massachusetts_PARCC_SGP@SGP$Goodness_of_Fit$ALGEBRA_I.2015 <- NULL
 
 Massachusetts_PARCC_SGP <- prepareSGP(Massachusetts_PARCC_SGP)
 
-debug(analyzeSGP)
 Massachusetts_PARCC_SGP <- analyzeSGP(Massachusetts_PARCC_SGP,
 			years="2015",
 			sgp.percentiles=TRUE,
@@ -73,8 +72,8 @@ Massachusetts_PARCC_SGP <- analyzeSGP(Massachusetts_PARCC_SGP,
 			sgp.projections.lagged.baseline=FALSE,
 			sgp.percentiles.equated=TRUE,
 			sgp.config=MA_PARCC_CONFIG,
-			sgp.use.my.coefficient.matrices=TRUE)#,
-#			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=8)))
+			sgp.use.my.coefficient.matrices=TRUE,
+			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=8)))
 
 save(Massachusetts_PARCC_SGP, file="Data/Massachusetts_PARCC_SGP.Rdata")
 
