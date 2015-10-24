@@ -44,6 +44,7 @@ Massachusetts_PARCC_SGP <- analyzeSGP(Massachusetts_PARCC_SGP,
 			sgp.projections.baseline=FALSE,
 			sgp.projections.lagged.baseline=FALSE,
 			sgp.percentiles.equated=TRUE,
+			sgp.percentiles.equating.method=c("identity", "mean", "linear", "equipercentile"),
 			sgp.config=MA_PARCC_CONFIG,
 			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=8)))
 
