@@ -13,7 +13,7 @@ require(SGP)
 
 ### Load data
 
-Massachusetts_Data_LONG_2015_MATHEMATICS <- as.data.table(read.spss("Data/Base_Files/MCAS2015_MATHEMATICS_8.sav", to.data.frame=TRUE, trim.factor.names = TRUE))
+Massachusetts_Data_LONG_2015_MATHEMATICS <- as.data.table(read.spss("Data/MCAS2015_Math2.sav", to.data.frame=TRUE, trim.factor.names = TRUE))
 
 
 ### Change names
@@ -24,26 +24,19 @@ setnames(Massachusetts_Data_LONG_2015_MATHEMATICS, c("ID", "GRADE", "RAW_SCORE",
 
 ### Tidy Up Data
 
-levels(Massachusetts_Data_LONG_2015_MATHEMATICS$TEST_STATUS) <- c("", "NTA", "NTL", "NTM", "NTO", "T", "TR")
-Massachusetts_Data_LONG_2015_MATHEMATICS <- subset(Massachusetts_Data_LONG_2015_MATHEMATICS, TEST_STATUS=="T")
-Massachusetts_Data_LONG_2015_MATHEMATICS[,TEST_STATUS:=NULL]
-
 Massachusetts_Data_LONG_2015_MATHEMATICS[,RAW_SCORE:=NULL]
 
 levels(Massachusetts_Data_LONG_2015_MATHEMATICS$ID) <- sapply(levels(Massachusetts_Data_LONG_2015_MATHEMATICS$ID), capwords)
 Massachusetts_Data_LONG_2015_MATHEMATICS[,ID := as.character(ID)]
 
-levels(Massachusetts_Data_LONG_2015_MATHEMATICS$ACHIEVEMENT_LEVEL) <- c(NA, "Advanced", "Needs Improvement", "Proficient", "Warning/Failing")
+
+levels(Massachusetts_Data_LONG_2015_MATHEMATICS$ACHIEVEMENT_LEVEL) <- c("Advanced", "Needs Improvement", "Proficient", "Warning/Failing")
 Massachusetts_Data_LONG_2015_MATHEMATICS[,ACHIEVEMENT_LEVEL := as.character(ACHIEVEMENT_LEVEL)]
 
 Massachusetts_Data_LONG_2015_MATHEMATICS[,GRADE:= as.character(as.numeric(as.character(GRADE)))]
 
 Massachusetts_Data_LONG_2015_MATHEMATICS[,CONTENT_AREA:="MATHEMATICS"]
 Massachusetts_Data_LONG_2015_MATHEMATICS[,YEAR:="2015"]
-
-Massachusetts_Data_LONG_2015_MATHEMATICS[,VALID_CASE:=as.character(VALID_CASE)]
-Massachusetts_Data_LONG_2015_MATHEMATICS[is.na(VALID_CASE), VALID_CASE:="INVALID_CASE"]
-Massachusetts_Data_LONG_2015_MATHEMATICS[VALID_CASE==1, VALID_CASE:="VALID_CASE"]
 
 
 ### Remove records with no scale score
