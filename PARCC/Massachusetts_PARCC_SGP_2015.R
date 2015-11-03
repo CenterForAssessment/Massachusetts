@@ -68,7 +68,7 @@ Massachusetts_PARCC_SGP <- updateSGP(Massachusetts_PARCC_SGP,
 			sgp.target.scale.scores=TRUE,
 			sgp.config=MA_PARCC_CONFIG,
 			plot.types="studentGrowthPlot",
-			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=8, PROJECTIONS=8, LAGGED_PROJECTIONS=8)))
+			parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=8, PROJECTIONS=8, LAGGED_PROJECTIONS=8, SGP_SCALE_SCORE_TARGETS=8, SG_PLOTS=1)))
 
 
 ### save results
