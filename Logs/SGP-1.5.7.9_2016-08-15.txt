@@ -1,0 +1,68 @@
+
+Started analyzeSGP Monday August 15 08:02:48 2016
+
+
+	analyzeSGP(
+		 sgp_object = Massachusetts_SGP
+		state = MA_2016
+		sgp.percentiles = TRUE
+		sgp.projections = FALSE
+		sgp.projections.lagged = FALSE
+		sgp.percentiles.baseline = FALSE
+		sgp.projections.baseline = FALSE
+		sgp.projections.lagged.baseline = FALSE
+		simulate.sgps = FALSE
+		sgp.config = MA_2016.config
+		parallel.config = list(BACKEND = "PARALLEL", WORKERS = list(TAUS = 22))
+		sgp.percentiles.equated = FALSE )
+
+	Started studentGrowthPercentiles: Monday August 15 08:03:32 2016
+		Content Area: ELA, Year: 2016, Grade Progression: 3, 4, 5, 6, 7, 8, 10  (N=60,599)
+	Finished studentGrowthPercentiles: Monday August 15 08:09:07 2016 in 5 Minutes, 35 Seconds
+
+	Started studentGrowthPercentiles: Monday August 15 08:09:20 2016
+		Content Area: MATHEMATICS, Year: 2016, Grade Progression: 3, 4, 5, 6, 7, 8, 10  (N=60,809)
+	Finished studentGrowthPercentiles: Monday August 15 08:14:35 2016 in 5 Minutes, 15 Seconds
+
+Finished analyzeSGP Monday August 15 08:14:44 2016 in 11 Minutes, 56 Seconds 
+
+
+Started outputSGP Monday August 15 08:17:42 2016: Files produced from outputSGP saved in 'Data'
+
+
+
+	outputSGP(
+		 sgp_object = Massachusetts_SGP
+		state = MA_2016
+		output.type = c("LONG_Data", "LONG_FINAL_YEAR_Data", "WIDE_Data") )
+
+	Started LONG data production in outputSGP Monday August 15 08:17:42 2016
+Started combineSGP Monday August 15 08:23:56 2016
+	NOTE: No baseline referenced SGP results available in SGP slot. No baseline referenced SGP results will be merged.
+	NOTE: No SGP projections available in SGP slot. No current year student growth projection targets will be produced.
+	NOTE: No SGP baseline projections available in SGP slot. No current year baseline student growth projection targets will be produced.
+	NOTE: No SGP lagged projections available in SGP slot. No student growth projection targets will be produced.
+	NOTE: No SGP lagged baseline projections available in SGP slot. No baseline referenced student growth projection targets will be produced.
+Finished combineSGP Monday August 15 08:24:02 2016 in 5.482 Seconds 
+
+
+Started outputSGP Monday August 15 08:26:54 2016: Files produced from outputSGP saved in 'Data'
+
+
+
+	outputSGP(
+		 sgp_object = Massachusetts_SGP
+		state = MA_2016
+		output.type = c("LONG_Data", "LONG_FINAL_YEAR_Data", "WIDE_Data") )
+
+	Started LONG data production in outputSGP Monday August 15 08:26:54 2016
+	Finished LONG data production in outputSGP Monday August 15 08:34:58 2016 in 8 Minutes, 3 Seconds 
+
+	Started LONG FINAL YEAR data production in outputSGP Monday August 15 08:34:58 2016
+	Finished LONG FINAL YEAR data production in outputSGP Monday August 15 08:35:44 2016 in 46.105 Seconds 
+
+	Started WIDE data production in outputSGP Monday August 15 08:35:44 2016
+	Finished WIDE data production in outputSGP Monday August 15 08:52:38 2016 in 16 Minutes, 54 Seconds 
+
+Finished outputSGP Monday August 15 08:52:39 2016 in 25 Minutes, 44 Seconds 
+
