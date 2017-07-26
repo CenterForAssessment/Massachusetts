@@ -6,5 +6,4 @@ MATHEMATICS_2017.config <- list(
         MATHEMATICS.2017 = list(
                 sgp.content.areas=c('ALGEBRA_I', 'MATHEMATICS'),
                 sgp.panel.years=as.character(c(2015, 2017)),
-                sgp.grade.sequences=list(c('8', '10')),
-                sgp.projection.grade.sequences="NO_PROJECTIONS"))
+                sgp.grade.sequences=list(c('8', '10'))))

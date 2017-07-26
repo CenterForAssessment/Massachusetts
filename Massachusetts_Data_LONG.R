@@ -65,6 +65,6 @@ save(Massachusetts_Data_LONG, file="Data/Massachusetts_Data_LONG.Rdata")
 
 ###  Create knots and boundaries
 
-#Massachusetts_Data_LONG[YEAR <= "2016", CONTENT_AREA := paste0(CONTENT_AREA, ".2016")]
-#MA_2017_Knots_Boundaries <- createKnotsBoundaries(Massachusetts_Data_LONG)
-#save(MA_2017_Knots_Boundaries, file="MA_2017_Knots_Boundaries.Rdata")
+Massachusetts_Data_LONG[YEAR <= "2016", CONTENT_AREA := paste0(CONTENT_AREA, ".2016")]
+MA_2017_Knots_Boundaries <- createKnotsBoundaries(Massachusetts_Data_LONG)
+save(MA_2017_Knots_Boundaries, file="MA_2017_Knots_Boundaries.Rdata")
