@@ -30,7 +30,7 @@ setattr(Massachusetts_Data_LONG$CONTENT_AREA, "levels", c("ELA", "", "ALGEBRA_I"
 Massachusetts_Data_LONG[CONTENT_AREA=="",CONTENT_AREA:=NA]
 Massachusetts_Data_LONG[,CONTENT_AREA:=as.character(CONTENT_AREA)]
 
-setattr(Massachusetts_Data_LONG$ACHIEVEMENT_LEVEL, "levels", c("", "Advanced", "Needs Improvement", "Proficient", "Warning-Failing"))
+setattr(Massachusetts_Data_LONG$ACHIEVEMENT_LEVEL, "levels", c("", "Advanced", "Needs Improvement", "Proficient", "Warning/Failing"))
 Massachusetts_Data_LONG[,ACHIEVEMENT_LEVEL:=as.character(ACHIEVEMENT_LEVEL)]
 Massachusetts_Data_LONG[ACHIEVEMENT_LEVEL=="",ACHIEVEMENT_LEVEL:=NA]
 
