@@ -15,6 +15,12 @@ options(warn=2)
 load("Data/Massachusetts_Data_LONG.Rdata")
 
 
+### Load Knots and Boundaries
+
+load("MA_2017_Knots_Boundaries.Rdata")
+SGPstateData[["MA"]][["Achievement"]][["Knots_Boundaries"]] <- MA_2017_Knots_Boundaries
+
+
 ### Load configurations
 
 source("SGP_CONFIG/2017/ELA.R")
