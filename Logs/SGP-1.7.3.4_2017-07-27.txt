@@ -1,0 +1,147 @@
+
+Started abcSGP Thursday July 27 05:45:08 2017
+
+
+	abcSGP(
+		 sgp_object = Massachusetts_Data_LONG
+		steps = c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP")
+		sgp.percentiles = TRUE
+		sgp.projections = FALSE
+		sgp.projections.lagged = FALSE
+		sgp.percentiles.baseline = FALSE
+		sgp.projections.baseline = FALSE
+		sgp.projections.lagged.baseline = FALSE
+		sgp.target.scale.scores = FALSE
+		simulate.sgps = FALSE
+		save.intermediate.results = FALSE
+		sgp.config = MA_2017.config
+		sgp.percentiles.equated = FALSE )
+
+
+Started prepareSGP Thursday July 27 05:45:08 2017
+
+
+	prepareSGP(
+		 data = sgp_object
+		data_supplementary = data_supplementary
+		state = state
+		var.names = prepareSGP.var.names
+		create.additional.variables = prepareSGP.create.additional.variables
+		fix.duplicates = fix.duplicates )
+
+Finished prepareSGP Thursday July 27 05:45:11 2017 in 3.246 Seconds 
+
+
+Started analyzeSGP Thursday July 27 05:45:11 2017
+
+
+	analyzeSGP(
+		 sgp_object = sgp_object
+		state = state
+		years = years
+		content_areas = content_areas
+		grades = grades
+		sgp.percentiles = sgp.percentiles
+		sgp.projections = sgp.projections
+		sgp.projections.lagged = sgp.projections.lagged
+		sgp.percentiles.baseline = sgp.percentiles.baseline
+		sgp.projections.baseline = sgp.projections.baseline
+		sgp.projections.lagged.baseline = sgp.projections.lagged.baseline
+		sgp.minimum.default.panel.years = sgp.minimum.default.panel.years
+		sgp.use.my.coefficient.matrices = sgp.use.my.coefficient.matrices
+		sgp.test.cohort.size = sgp.test.cohort.size
+		return.sgp.test.results = return.sgp.test.results
+		simulate.sgps = simulate.sgps
+		calculate.simex = calculate.simex
+		calculate.simex.baseline = calculate.simex.baseline
+		goodness.of.fit.print = goodness.of.fit.print
+		sgp.config = sgp.config
+		parallel.config = parallel.config
+		verbose.output = verbose.output
+		get.cohort.data.info = get.cohort.data.info
+		sgp.sqlite = sgp.sqlite
+		sgp.percentiles.equated = sgp.percentiles.equated
+		sgp.percentiles.equating.method = sgp.percentiles.equating.method
+		sgp.percentiles.calculate.sgps = sgp.percentiles.calculate.sgps
+		SGPt = SGPt
+		fix.duplicates = fix.duplicates )
+
+	NOTE: ELA Grade 10 data does not include ACHIEVEMENT_LEVEL_PRIOR variable. Prior Achievement Level plot panel will not be included in goodness of fit plot.
+
+Started abcSGP Thursday July 27 07:03:46 2017
+
+
+	abcSGP(
+		 sgp_object = Massachusetts_Data_LONG
+		steps = c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP")
+		sgp.percentiles = TRUE
+		sgp.projections = FALSE
+		sgp.projections.lagged = FALSE
+		sgp.percentiles.baseline = FALSE
+		sgp.projections.baseline = FALSE
+		sgp.projections.lagged.baseline = FALSE
+		sgp.target.scale.scores = FALSE
+		simulate.sgps = FALSE
+		save.intermediate.results = FALSE
+		sgp.config = MA_2017.config
+		sgp.percentiles.equated = FALSE )
+
+
+Started prepareSGP Thursday July 27 07:03:46 2017
+
+
+	prepareSGP(
+		 data = sgp_object
+		data_supplementary = data_supplementary
+		state = state
+		var.names = prepareSGP.var.names
+		create.additional.variables = prepareSGP.create.additional.variables
+		fix.duplicates = fix.duplicates )
+
+Finished prepareSGP Thursday July 27 07:03:50 2017 in 4.265 Seconds 
+
+
+Started analyzeSGP Thursday July 27 07:03:50 2017
+
+
+	analyzeSGP(
+		 sgp_object = sgp_object
+		state = state
+		years = years
+		content_areas = content_areas
+		grades = grades
+		sgp.percentiles = sgp.percentiles
+		sgp.projections = sgp.projections
+		sgp.projections.lagged = sgp.projections.lagged
+		sgp.percentiles.baseline = sgp.percentiles.baseline
+		sgp.projections.baseline = sgp.projections.baseline
+		sgp.projections.lagged.baseline = sgp.projections.lagged.baseline
+		sgp.minimum.default.panel.years = sgp.minimum.default.panel.years
+		sgp.use.my.coefficient.matrices = sgp.use.my.coefficient.matrices
+		sgp.test.cohort.size = sgp.test.cohort.size
+		return.sgp.test.results = return.sgp.test.results
+		simulate.sgps = simulate.sgps
+		calculate.simex = calculate.simex
+		calculate.simex.baseline = calculate.simex.baseline
+		goodness.of.fit.print = goodness.of.fit.print
+		sgp.config = sgp.config
+		parallel.config = parallel.config
+		verbose.output = verbose.output
+		get.cohort.data.info = get.cohort.data.info
+		sgp.sqlite = sgp.sqlite
+		sgp.percentiles.equated = sgp.percentiles.equated
+		sgp.percentiles.equating.method = sgp.percentiles.equating.method
+		sgp.percentiles.calculate.sgps = sgp.percentiles.calculate.sgps
+		SGPt = SGPt
+		fix.duplicates = fix.duplicates )
+
+	NOTE: ELA Grade 10 data does not include ACHIEVEMENT_LEVEL_PRIOR variable. Prior Achievement Level plot panel will not be included in goodness of fit plot.
+	Started studentGrowthPercentiles: Thursday July 27 07:03:52 2017
+		Content Area: ELA, Year: 2017, Grade Progression: 8, 10  (N=61,034)
+	Finished studentGrowthPercentiles: Thursday July 27 07:06:20 2017 in 2 Minutes, 28 Seconds
+
+	NOTE: ELA Grade 8 data does not include ACHIEVEMENT_LEVEL_PRIOR variable. Prior Achievement Level plot panel will not be included in goodness of fit plot.
+	Started studentGrowthPercentiles: Thursday July 27 07:06:21 2017
+		Content Area: ELA, Year: 2017, Grade Progression: 6, 7, 8  (N=66,891)
+	Finished studentGrowthPercentiles: Thursday July 27 07:12:14 2017 in 5 Minutes, 53 Seconds
+

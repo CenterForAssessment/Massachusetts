@@ -7,6 +7,7 @@
 ### Load packages
 
 require(SGP)
+options(warn=2)
 
 
 ### Load data
@@ -20,6 +21,11 @@ source("SGP_CONFIG/2017/ELA.R")
 source("SGP_CONFIG/2017/MATHEMATICS.R")
 
 MA_2017.config <- c(MATHEMATICS_2017.config, ELA_2017.config)
+
+
+### NULL out Cutscores for the time being:
+
+SGPstateData[["MA"]][["Achievement"]][["Cutscores"]] <- NULL
 
 
 ### abcSGP
@@ -37,7 +43,7 @@ Massachusetts_SGP <- abcSGP(
             sgp.percentiles.equated = FALSE,
             simulate.sgps = FALSE,
             sgp.target.scale.scores = FALSE,
-            save.intermediate.results=FALSE)#,
+            save.intermediate.results = FALSE)#,
 #            parallel.config = list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=12)))
 
 

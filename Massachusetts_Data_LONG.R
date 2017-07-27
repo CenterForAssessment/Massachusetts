@@ -26,7 +26,7 @@ Massachusetts_Data_LONG[,GRADE:=as.character(as.numeric(as.character(GRADE)))]
 
 Massachusetts_Data_LONG[,ID:=as.character(ID)]
 
-setattr(Massachusetts_Data_LONG$CONTENT_AREA, "levels", c("ELA", "", "ALGEBRA_I", "MATHEMATICS"))
+setattr(Massachusetts_Data_LONG$CONTENT_AREA, "levels", c("ELA", "ALGEBRA_I", "MATHEMATICS"))
 Massachusetts_Data_LONG[CONTENT_AREA=="",CONTENT_AREA:=NA]
 Massachusetts_Data_LONG[,CONTENT_AREA:=as.character(CONTENT_AREA)]
 
@@ -65,6 +65,6 @@ save(Massachusetts_Data_LONG, file="Data/Massachusetts_Data_LONG.Rdata")
 
 ###  Create knots and boundaries
 
-Massachusetts_Data_LONG[YEAR <= "2016", CONTENT_AREA := paste0(CONTENT_AREA, ".2016")]
+Massachusetts_Data_LONG[YEAR=="2017", CONTENT_AREA := paste0(CONTENT_AREA, ".2017")]
 MA_2017_Knots_Boundaries <- createKnotsBoundaries(Massachusetts_Data_LONG)
 save(MA_2017_Knots_Boundaries, file="MA_2017_Knots_Boundaries.Rdata")
