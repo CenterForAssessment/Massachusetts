@@ -17,8 +17,8 @@ load("Data/Massachusetts_Data_LONG.Rdata")
 
 ### Load Knots and Boundaries
 
-load("MA_2017_Knots_Boundaries.Rdata")
-SGPstateData[["MA"]][["Achievement"]][["Knots_Boundaries"]] <- MA_2017_Knots_Boundaries
+#load("MA_2017_Knots_Boundaries.Rdata")
+#SGPstateData[["MA"]][["Achievement"]][["Knots_Boundaries"]] <- MA_2017_Knots_Boundaries
 
 
 ### Load configurations
@@ -49,8 +49,8 @@ Massachusetts_SGP <- abcSGP(
             sgp.percentiles.equated = FALSE,
             simulate.sgps = FALSE,
             sgp.target.scale.scores = FALSE,
-            save.intermediate.results = FALSE)#,
-#            parallel.config = list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=12)))
+            save.intermediate.results = FALSE,
+            parallel.config = list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=12)))
 
 
 ### Save results
