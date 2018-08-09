@@ -43,8 +43,8 @@ Massachusetts_SGP <- abcSGP(
             sgp.percentiles.equated=FALSE,
             simulate.sgps=TRUE,
             sgp.target.scale.scores=TRUE,
-            save.intermediate.results=FALSE,
-            parallel.config = list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=12)))
+            save.intermediate.results=FALSE)#,
+#            parallel.config = list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=12)))
 
 
 ### Save results
