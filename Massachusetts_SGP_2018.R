@@ -12,8 +12,9 @@ options(warn=2)
 
 ### Load data
 
-load("Data/Massachusetts_SGP.Rdata")
-load("Data/Massachusetts_Data_LONG_2018.Rdata")
+#load("Data/Massachusetts_SGP.Rdata")
+#load("Data/Massachusetts_Data_LONG_2018.Rdata")
+load("Data/Massachusetts_Data_LONG.Rdata")
 
 
 ### Load configurations
@@ -26,9 +27,11 @@ MA_2018.config <- c(MATHEMATICS_2018.config, ELA_2018.config)
 
 ### abcSGP
 
-Massachusetts_SGP <- updateSGP(
-            Massachusetts_SGP,
-            Massachusetts_Data_LONG_2018,
+Massachusetts_SGP <- abcSGP(
+            Massachusetts_Data_LONG,
+#Massachusetts_SGP <- updateSGP(
+#            Massachusetts_SGP,
+#            Massachusetts_Data_LONG_2018,
             sgp.config = MA_2018.config,
             steps=c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
             sgp.percentiles=TRUE,
