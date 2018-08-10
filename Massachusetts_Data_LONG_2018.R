@@ -40,7 +40,7 @@ Massachusetts_Data_LONG_2018[,ACHIEVEMENT_LEVEL_ORIGINAL:=ACHIEVEMENT_LEVEL]
 Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Advanced", "Exceeding"), ACHIEVEMENT_LEVEL:="Level 4"]
 Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Meeting", "Proficient"), ACHIEVEMENT_LEVEL:="Level 3"]
 Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Partially Meeting", "Needs Improvement"), ACHIEVEMENT_LEVEL:="Level 2"]
-Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Not Meeting", "Warning/Failing"), ACHIEVEMENT_LEVEL:="Level 2"]
+Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Not Meeting", "Warning/Failing"), ACHIEVEMENT_LEVEL:="Level 1"]
 
 Massachusetts_Data_LONG_2018[,YEAR:=as.character(YEAR)]
 
