@@ -14,8 +14,8 @@ require(SGP)
 
 ### Load data
 
-ELA_Data <- read.spss("Data/Base_Files/MCAS_ELA_Long_2018.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
-MATH_Data <- read.spss("Data/Base_Files/MCAS_Math_Long_2018.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
+ELA_Data <- read.spss("Data/Base_Files/MCAS ELA_Long2.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
+MATH_Data <- read.spss("Data/Base_Files/MCAS Math_Long2.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
 Massachusetts_Data_LONG_2018 <- rbindlist(list(ELA_Data, MATH_Data), fill=TRUE)
 
 
@@ -31,20 +31,13 @@ setattr(Massachusetts_Data_LONG_2018$CONTENT_AREA, "levels", c("ELA", "ALGEBRA_I
 Massachusetts_Data_LONG_2018[CONTENT_AREA=="",CONTENT_AREA:=NA]
 Massachusetts_Data_LONG_2018[,CONTENT_AREA:=as.character(CONTENT_AREA)]
 
-setattr(Massachusetts_Data_LONG_2018$ACHIEVEMENT_LEVEL, "levels", c("Advanced", "Exceeding", "Meeting", "Needs Improvement", "Not Meeting", "Partially Meeting", "Proficient", "Warning/Failing"))
+setattr(Massachusetts_Data_LONG_2018$ACHIEVEMENT_LEVEL, "levels", c("", "Level 1", "Level 2", "Level 3", "Level 4"))
 Massachusetts_Data_LONG_2018[,ACHIEVEMENT_LEVEL:=as.character(ACHIEVEMENT_LEVEL)]
 Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL=="",ACHIEVEMENT_LEVEL:=NA]
 
-Massachusetts_Data_LONG_2018[,ACHIEVEMENT_LEVEL_ORIGINAL:=ACHIEVEMENT_LEVEL]
-
-Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Advanced", "Exceeding"), ACHIEVEMENT_LEVEL:="Level 4"]
-Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Meeting", "Proficient"), ACHIEVEMENT_LEVEL:="Level 3"]
-Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Partially Meeting", "Needs Improvement"), ACHIEVEMENT_LEVEL:="Level 2"]
-Massachusetts_Data_LONG_2018[ACHIEVEMENT_LEVEL_ORIGINAL %in% c("Not Meeting", "Warning/Failing"), ACHIEVEMENT_LEVEL:="Level 1"]
-
 Massachusetts_Data_LONG_2018[,YEAR:=as.character(YEAR)]
 
-setattr(Massachusetts_Data_LONG_2018$ASSESSMENT_PROGRAM, "levels", c("MCAS", "PARCC"))
+setattr(Massachusetts_Data_LONG_2018$ASSESSMENT_PROGRAM, "levels", c("", "MCAS", "PARCC"))
 Massachusetts_Data_LONG_2018[ASSESSMENT_PROGRAM=="",ASSESSMENT_PROGRAM:=NA]
 Massachusetts_Data_LONG_2018[,ASSESSMENT_PROGRAM:=as.factor(as.character(ASSESSMENT_PROGRAM))]
 
