@@ -14,8 +14,8 @@ require(SGP)
 
 ### Load data
 
-ELA_Data <- read.spss("Data/Base_Files/MCAS ELA_Long2.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
-MATH_Data <- read.spss("Data/Base_Files/MCAS Math_Long2.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
+ELA_Data <- read.spss("Data/Base_Files/MCAS ELA_Long3.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
+MATH_Data <- read.spss("Data/Base_Files/MCAS Math_Long3.sav", to.data.frame=TRUE, trim.factor.names=TRUE)
 Massachusetts_Data_LONG_2018 <- rbindlist(list(ELA_Data, MATH_Data), fill=TRUE)
 
 

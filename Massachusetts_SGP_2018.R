@@ -44,7 +44,7 @@ Massachusetts_SGP <- abcSGP(
             simulate.sgps=TRUE,
             sgp.target.scale.scores=TRUE,
             save.intermediate.results=FALSE)#,
-#            parallel.config = list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=12)))
+#           parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=4, PROJECTIONS=4, LAGGED_PROJECTIONS=4, SGP_SCALE_SCORE_TARGETS=4, SUMMARY=2, GA_PLOTS=2, SG_PLOTS=1)))
 
 
 ### Save results
