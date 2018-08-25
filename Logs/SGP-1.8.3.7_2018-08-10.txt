@@ -1,0 +1,248 @@
+
+Started abcSGP Friday August 10 21:18:04 2018
+
+
+	abcSGP(
+		 sgp_object = Massachusetts_Data_LONG_2018
+		steps = c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP")
+		sgp.percentiles = TRUE
+		sgp.projections = TRUE
+		sgp.projections.lagged = TRUE
+		sgp.percentiles.baseline = FALSE
+		sgp.projections.baseline = FALSE
+		sgp.projections.lagged.baseline = FALSE
+		sgp.target.scale.scores = TRUE
+		simulate.sgps = TRUE
+		parallel.config = list(BACKEND = "PARALLEL", WORKERS = list(PERCENTILES = 8, PROJECTIONS = 8, LAGGED_PROJECTIONS = 8, SGP_SCALE_SCORE_TARGETS = 8, GA_PLOTS = 2, SG_PLOTS = 1))
+		save.intermediate.results = FALSE
+		sgp.config = MA_2018.config
+		sgp.percentiles.equated = FALSE )
+
+
+Started prepareSGP Friday August 10 21:18:05 2018
+
+
+	prepareSGP(
+		 data = sgp_object
+		data_supplementary = data_supplementary
+		state = state
+		var.names = prepareSGP.var.names
+		create.additional.variables = prepareSGP.create.additional.variables
+		fix.duplicates = fix.duplicates )
+
+Finished prepareSGP Friday August 10 21:18:08 2018 in 3.409 Seconds 
+
+
+Started analyzeSGP Friday August 10 21:18:08 2018
+
+
+	analyzeSGP(
+		 sgp_object = sgp_object
+		state = state
+		years = years
+		content_areas = content_areas
+		grades = grades
+		sgp.percentiles = sgp.percentiles
+		sgp.projections = sgp.projections
+		sgp.projections.lagged = sgp.projections.lagged
+		sgp.percentiles.baseline = sgp.percentiles.baseline
+		sgp.projections.baseline = sgp.projections.baseline
+		sgp.projections.lagged.baseline = sgp.projections.lagged.baseline
+		sgp.minimum.default.panel.years = sgp.minimum.default.panel.years
+		sgp.use.my.coefficient.matrices = sgp.use.my.coefficient.matrices
+		sgp.test.cohort.size = sgp.test.cohort.size
+		return.sgp.test.results = return.sgp.test.results
+		simulate.sgps = simulate.sgps
+		calculate.simex = calculate.simex
+		calculate.simex.baseline = calculate.simex.baseline
+		goodness.of.fit.print = goodness.of.fit.print
+		sgp.config = sgp.config
+		parallel.config = parallel.config
+		verbose.output = verbose.output
+		get.cohort.data.info = get.cohort.data.info
+		sgp.sqlite = sgp.sqlite
+		sgp.percentiles.equated = sgp.percentiles.equated
+		sgp.percentiles.equating.method = sgp.percentiles.equating.method
+		sgp.percentiles.calculate.sgps = sgp.percentiles.calculate.sgps
+		SGPt = SGPt
+		fix.duplicates = fix.duplicates )
+
+	NOTE: MATHEMATICS Grade 10 data does not include ACHIEVEMENT_LEVEL_PRIOR variable. Prior Achievement Level plot panel will not be included in goodness of fit plot.
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 7, 8, 10  (N=4,625)
+	Finished studentGrowthPercentiles: Friday August 10 21:18:18 2018 in 8.055 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 3, 4  (N=67,498)
+	Finished studentGrowthPercentiles: Friday August 10 21:20:37 2018 in 2 Minutes, 26 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 7, 8, 10  (N=55,977)
+	Finished studentGrowthPercentiles: Friday August 10 21:22:40 2018 in 4 Minutes, 30 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 7, 8, 10  (N=60,951)
+	Finished studentGrowthPercentiles: Friday August 10 21:23:04 2018 in 4 Minutes, 54 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 4, 5, 6  (N=66,526)
+	Finished studentGrowthPercentiles: Friday August 10 21:24:08 2018 in 5 Minutes, 58 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 3, 4, 5  (N=68,021)
+	Finished studentGrowthPercentiles: Friday August 10 21:24:22 2018 in 6 Minutes, 12 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 5, 6, 7  (N=66,242)
+	Finished studentGrowthPercentiles: Friday August 10 21:24:32 2018 in 6 Minutes, 21 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:10 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 6, 7, 8  (N=67,942)
+	Finished studentGrowthPercentiles: Friday August 10 21:24:37 2018 in 6 Minutes, 26 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:18:18 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 6, 7, 8  (N=67,882)
+	Finished studentGrowthPercentiles: Friday August 10 21:25:06 2018 in 6 Minutes, 48 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:24:09 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 3, 4  (N=67,565)
+	Finished studentGrowthPercentiles: Friday August 10 21:26:57 2018 in 2 Minutes, 47 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:20:37 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 5, 6, 7  (N=66,189)
+	Finished studentGrowthPercentiles: Friday August 10 21:27:18 2018 in 6 Minutes, 41 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:22:40 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 4, 5, 6  (N=66,478)
+	Finished studentGrowthPercentiles: Friday August 10 21:29:12 2018 in 6 Minutes, 31 Seconds
+
+	Started studentGrowthPercentiles: Friday August 10 21:23:05 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 3, 4, 5  (N=67,992)
+	Finished studentGrowthPercentiles: Friday August 10 21:29:34 2018 in 6 Minutes, 29 Seconds
+
+		NOTE: Coefficient matrices indicated by argument use.my.coefficient.matrices are not included.
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 7, 8  (N=70,888)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:30:00 2018 in 23.6 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 6, 7  (N=69,560)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:30:19 2018 in 42.4 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 3  (N=68,346)
+	Finished studentGrowthProjections: Friday August 10 21:30:27 2018 in 50.6 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 3  (N=68,427)
+	Finished studentGrowthProjections: Friday August 10 21:30:28 2018 in 51.1 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 5, 6  (N=69,814)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:30:35 2018 in 58.6 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 3, 4  (N=70,656)
+	Finished studentGrowthProjections: Friday August 10 21:30:36 2018 in 58.7 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 4, 5  (N=71,073)
+	Finished studentGrowthProjections: Friday August 10 21:30:36 2018 in 59.3 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:29:37 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 3, 4  (N=70,657)
+	Finished studentGrowthProjections: Friday August 10 21:30:38 2018 in 1 Minute, 1 Second
+
+	Started studentGrowthProjections: Friday August 10 21:30:28 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 7, 8  (N=70,939)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:30:50 2018 in 22.1 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:30:01 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 4, 5  (N=71,091)
+	Finished studentGrowthProjections: Friday August 10 21:31:00 2018 in 59.1 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:30:28 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 6, 7  (N=69,591)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:31:06 2018 in 38.3 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:30:19 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 5, 6  (N=69,835)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:31:15 2018 in 56 Seconds
+
+	Started studentGrowthProjections Friday August 10 21:31:17 2018
+		Subject: MATHEMATICS, Year: 2018, Grade Progression: 7, 8 LAGGED MATHEMATICS
+		NOTE: Requested grade & content area progression are missing one or more coefficient matrices.
+ 	Student Growth Projections NOT RUN Friday August 10 21:31:18 2018 
+
+	Started studentGrowthProjections: Friday August 10 21:31:17 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 6, 7 LAGGED (N=67,882)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:31:56 2018 in 39.3 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:17 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 5, 6 LAGGED (N=66,189)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:11 2018 in 54.5 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:17 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 4, 5 LAGGED (N=66,478)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:30 2018 in 1 Minute, 13 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:35 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 4, 5 LAGGED (N=66,526)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:48 2018 in 1 Minute, 12 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:17 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 3, 4 LAGGED (N=67,992)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:49 2018 in 1 Minute, 32 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:18 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 3, 4 LAGGED (N=68,021)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:50 2018 in 1 Minute, 31 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:56 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 5, 6 LAGGED (N=66,242)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:51 2018 in 54.9 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:32:11 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 6, 7 LAGGED (N=67,942)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:52 2018 in 40.4 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:17 2018
+		Content Area: ELA, Year: 2018, Grade Progression: 3 LAGGED (N=67,498)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:56 2018 in 1 Minute, 39 Seconds
+
+	Started studentGrowthProjections: Friday August 10 21:31:17 2018
+		Content Area: MATHEMATICS, Year: 2018, Grade Progression: 3 LAGGED (N=67,565)
+		NOTE: Cutscores provided do not include cutscores for all grades/content areas in projection.
+		Projections to grades/content areas without cutscores will be missing.
+	Finished studentGrowthProjections: Friday August 10 21:32:57 2018 in 1 Minute, 40 Seconds
+
