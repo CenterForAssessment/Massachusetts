@@ -2,6 +2,7 @@
 .DS_Store
 .RData
 /Data
+/Logs
 /Goodness_of_Fit
 /Visualizations
 /Archive/PRE_2016/PARCC/Goodness_of_Fit
