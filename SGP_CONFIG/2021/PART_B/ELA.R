@@ -57,5 +57,16 @@ ELA_2021.config <- list(
        sgp.projection.baseline.content.areas=c("ELA"),
        sgp.projection.baseline.panel.years=c("2021"),
        sgp.projection.baseline.grade.sequences=list(c("7")),
-       sgp.projection.sequence="ELA_GRADE_7")
+       sgp.projection.sequence="ELA_GRADE_7"),
+   ELA.2021 = list(
+       sgp.content.areas=c("ELA", "ELA", "ELA"),
+       sgp.baseline.content.areas=c("ELA", "ELA", "ELA"),
+       sgp.baseline.panel.years=c("2018", "2019", "2021"),
+       sgp.panel.years=c("2018", "2019", "2021"),
+       sgp.grade.sequences=list(c("6", "8", "10")),
+       sgp.baseline.grade.sequences=list(c("6", "8", "10")),
+       sgp.projection.baseline.content.areas=c("ELA"),
+       sgp.projection.baseline.panel.years=c("2021"),
+       sgp.projection.baseline.grade.sequences=list(c("8")),
+       sgp.projection.sequence="ELA_GRADE_8")
 )

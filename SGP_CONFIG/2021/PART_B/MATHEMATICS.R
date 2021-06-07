@@ -1,5 +1,5 @@
 #####
-###   Configurations for calculating STRAIGHT Mathematics PROJECTIONS in 2021
+###   Configurations for calculating STRAIGHT MATHEMATICS PROJECTIONS in 2021
 #####
 
 MATHEMATICS_2021.config <- list(
@@ -57,5 +57,16 @@ MATHEMATICS_2021.config <- list(
        sgp.projection.baseline.content.areas=c("MATHEMATICS"),
        sgp.projection.baseline.panel.years=c("2021"),
        sgp.projection.baseline.grade.sequences=list(c("7")),
-       sgp.projection.sequence="MATHEMATICS_GRADE_7")
+       sgp.projection.sequence="MATHEMATICS_GRADE_7"),
+   MATHEMATICS.2021 = list(
+       sgp.content.areas=c("MATHEMATICS", "MATHEMATICS", "MATHEMATICS"),
+       sgp.baseline.content.areas=c("MATHEMATICS", "MATHEMATICS", "MATHEMATICS"),
+       sgp.baseline.panel.years=c("2018", "2019", "2021"),
+       sgp.panel.years=c("2018", "2019", "2021"),
+       sgp.grade.sequences=list(c("6", "8", "10")),
+       sgp.baseline.grade.sequences=list(c("6", "8", "10")),
+       sgp.projection.baseline.content.areas=c("MATHEMATICS"),
+       sgp.projection.baseline.panel.years=c("2021"),
+       sgp.projection.baseline.grade.sequences=list(c("8")),
+       sgp.projection.sequence="MATHEMATICS_GRADE_8")
 )
