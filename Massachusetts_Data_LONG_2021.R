@@ -26,7 +26,7 @@ setnames(Massachusetts_Data_LONG_2021, "SCALE_SCORE2", "SCALE_SCORE_ACTUAL")
 Massachusetts_Data_LONG_2021[,GRADE:=as.character(as.numeric(GRADE))]
 
 Massachusetts_Data_LONG_2021[,ACHIEVEMENT_LEVEL:=as.factor(ACHIEVEMENT_LEVEL)]
-levels(Massachusetts_Data_LONG_2021) <- c("Level 1", "Level 2", "Level 3", "Level 4")
+levels(Massachusetts_Data_LONG_2021$ACHIEVEMENT_LEVEL) <- c("Level 1", "Level 2", "Level 3", "Level 4")
 Massachusetts_Data_LONG_2021[,ACHIEVEMENT_LEVEL:=as.character(ACHIEVEMENT_LEVEL)]
 
 Massachusetts_Data_LONG_2021[,YEAR:=as.character(YEAR)]

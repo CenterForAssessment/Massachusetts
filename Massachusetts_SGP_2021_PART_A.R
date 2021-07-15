@@ -9,7 +9,7 @@ require(SGP)
 require(SGPmatrices)
 
 ###   Load data
-load("Data/Massachusetts_SGP.Rdata"))
+load("Data/Massachusetts_SGP.Rdata")
 load("Data/Massachusetts_Data_LONG_2021.Rdata")
 
 ###   Add Baseline matrices to SGPstateData
@@ -44,4 +44,4 @@ Massachusetts_COVID_SGP <- updateSGP(
 )
 
 ###   Save results
-save(Massachusetts_SGP, file="Massachusetts_SGP.Rdata"))
+#save(Massachusetts_SGP, file="Massachusetts_SGP.Rdata"))
