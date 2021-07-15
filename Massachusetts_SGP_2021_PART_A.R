@@ -44,4 +44,4 @@ Massachusetts_COVID_SGP <- updateSGP(
 )
 
 ###   Save results
-save(Massachusetts_SGP, file="Massachusetts_SGP.Rdata")
+save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
