@@ -28,7 +28,7 @@ parallel.config <- list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=4, BASELINE
 ###   Run updateSGP :which(x, arr.ind = FALSE, useNames = TRUE)analysis
 #####
 
-Massachusetts_COVID_SGP <- updateSGP(
+Massachusetts_SGP <- updateSGP(
         what_sgp_object = Massachusetts_SGP,
         with_sgp_data_LONG = Massachusetts_Data_LONG_2021,
         steps = c("prepareSGP", "analyzeSGP", "combineSGP"),
@@ -42,6 +42,11 @@ Massachusetts_COVID_SGP <- updateSGP(
         save.intermediate.results = FALSE,
         parallel.config = parallel.config
 )
+
+### Copy SCALE_SCORE_PRIOR and SCALE_SCORE_PRIOR_STANDARDIZED to BASELINE counter parts
+
+Massachusetts_SGP@Data[YEAR=="2021", SCALE_SCORE_PRIOR_BASELINE:=SCALE_SCORE_PRIOR]
+Massachusetts_SGP@Data[YEAR=="2021", SCALE_SCORE_PRIOR_STANDARDIZED_BASELINE:=SCALE_SCORE_PRIOR_STANDARDIZED]
 
 ###   Save results
 save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")

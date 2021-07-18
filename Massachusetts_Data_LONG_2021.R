@@ -13,7 +13,6 @@ require(foreign)
 ### Load data
 tmp.math <- as.data.table(read.spss("Data/Base_Files/Math2021.sav", to.data.frame=TRUE, trim.factor.names=TRUE))
 tmp.ela <- as.data.table(read.spss("Data/Base_Files/ELA2021.sav", to.data.frame=TRUE, trim.factor.names=TRUE))
-setnames(tmp.math, "Mode", "mode")
 tmp.ela[,content_area:="ELA"]
 
 Massachusetts_Data_LONG_2021 <- rbindlist(list(tmp.math, tmp.ela))
