@@ -23,6 +23,7 @@ Massachusetts_Data_LONG_2017_to_2021 <- rbindlist(list(tmp.math, tmp.ela))
 ### Tidy up data
 setnames(Massachusetts_Data_LONG_2017_to_2021, toupper(names(Massachusetts_Data_LONG_2017_to_2021)))
 setnames(Massachusetts_Data_LONG_2017_to_2021, "SCALE_SCORE2", "SCALE_SCORE_ACTUAL")
+setnames(Massachusetts_Data_LONG_2017_to_2021, "SCALE_SCORE_STANDARD_ERROR", "SCALE_SCORE_CSEM")
 
 Massachusetts_Data_LONG_2017_to_2021[,GRADE:=as.character(as.numeric(GRADE))]
 
