@@ -85,10 +85,9 @@ Massachusetts_SGP <- abcSGP(
         sgp.projections.baseline=FALSE,
         sgp.projections.lagged.baseline=TRUE,
         sgp.target.scale.scores=TRUE,
-        outputSGP.directory=output.directory,
         parallel.config=parallel.config
 )
 
 
 ###  Save results
-save(Massachusetts_SGP, "Data/Massachusetts_SGP.Rdata"))
+save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
