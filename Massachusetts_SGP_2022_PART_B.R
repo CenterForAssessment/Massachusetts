@@ -65,4 +65,4 @@ Massachusetts_SGP <- abcSGP(
 )
 
 ###   Save results
-#save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
+save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
