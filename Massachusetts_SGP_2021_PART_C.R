@@ -9,7 +9,7 @@ require(SGP)
 require(SGPmatrices)
 
 ###   Load data
-load("Data/Massachusetts_SGP.Rdata"))
+load("Data/Massachusetts_SGP.Rdata")
 
 ###   Load configurations
 source("SGP_CONFIG/2021/PART_C/ELA.R")

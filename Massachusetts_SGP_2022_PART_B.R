@@ -51,8 +51,7 @@ Massachusetts_SGP <- updateSGP(
 
 Massachusetts_SGP <- abcSGP(
         sgp_object = Massachusetts_SGP,
-#        steps = c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
-        steps = c("prepareSGP", "analyzeSGP", "combineSGP"),
+        steps = c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
         sgp.config = MA_BASELINE_CONFIG,
         sgp.percentiles = FALSE,
         sgp.projections = FALSE,

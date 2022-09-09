@@ -1,8 +1,8 @@
-################################################################################
-###                                                                          ###
-###          SGP STRAIGHT projections for skip year SGP analyses for 2021    ###
-###                                                                          ###
-################################################################################
+####################################################################################################
+###                                                                                              ###
+###          SGP STRAIGHT BASELINE-REFERENCED projections for skip year SGP analyses for 2022    ###
+###                                                                                              ###
+####################################################################################################
 
 ###   Load packages
 require(SGP)
@@ -12,16 +12,16 @@ require(SGPmatrices)
 load("Data/Massachusetts_SGP.Rdata")
 
 ###   Load configurations
-source("SGP_CONFIG/2021/PART_B/ELA.R")
-source("SGP_CONFIG/2021/PART_B/MATHEMATICS.R")
+source("SGP_CONFIG/2022/PART_C/ELA_BASELINE.R")
+source("SGP_CONFIG/2022/PART_C/MATHEMATICS_BASELINE.R")
 
-MA_CONFIG <- c(ELA_2021.config, MATHEMATICS_2021.config)
+MA_BASELINE_CONFIG <- c(ELA_2022_BASELINE.config, MATHEMATICS_2022_BASELINE.config)
 
 ### Parameters
 parallel.config <- list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=4, BASELINE_PERCENTILES=4, PROJECTIONS=4, LAGGED_PROJECTIONS=4, SGP_SCALE_SCORE_TARGETS=4))
 
 ###   Add Baseline matrices to SGPstateData
-SGPstateData <- addBaselineMatrices("MA", "2021")
+SGPstateData <- addBaselineMatrices("MA", "2022")
 SGPstateData[["MA"]][["SGP_Configuration"]][["sgp.target.scale.scores.merge"]] <- NULL
 
 #  Establish required meta-data for STRAIGHT projection sequences
@@ -69,9 +69,9 @@ SGPstateData[["MA"]][["SGP_Configuration"]][["max.forward.projection.sequence"]]
 
 Massachusetts_SGP <- abcSGP(
         Massachusetts_SGP,
-        years = "2021", # need to add years now (after adding 2019 baseline projections).  Why?
+        years = "2022", # need to add years now (after adding 2019 baseline projections).  Why?
         steps=c("prepareSGP", "analyzeSGP", "combineSGP"),
-        sgp.config=MA_CONFIG,
+        sgp.config=MA_BASELINE_CONFIG,
         sgp.percentiles=FALSE,
         sgp.projections=FALSE,
         sgp.projections.lagged=FALSE,
@@ -83,4 +83,4 @@ Massachusetts_SGP <- abcSGP(
 )
 
 ###   Save results
-save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
+#save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
