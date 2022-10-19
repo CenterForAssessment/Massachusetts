@@ -94,5 +94,25 @@ ELA_BASELINE.config <- list(
 		sgp.baseline.content.areas=rep("ELA", 3),
 		sgp.baseline.panel.years=c("2016", "2017", "2019"),
 		sgp.baseline.grade.sequences=c("7", "8", "10"),
-		sgp.baseline.grade.sequences.lags=c(1,2))
+		sgp.baseline.grade.sequences.lags=c(1,2)),
+	list(
+		sgp.baseline.content.areas=rep("ELA", 2),
+		sgp.baseline.panel.years=c("2016", "2019"),
+		sgp.baseline.grade.sequences=c("3", "6"),
+		sgp.baseline.grade.sequences.lags=3),
+	list(
+		sgp.baseline.content.areas=rep("ELA", 2),
+		sgp.baseline.panel.years=c("2016", "2019"),
+		sgp.baseline.grade.sequences=c("4", "7"),
+		sgp.baseline.grade.sequences.lags=3),
+	list(
+		sgp.baseline.content.areas=rep("ELA", 2),
+		sgp.baseline.panel.years=c("2016", "2019"),
+		sgp.baseline.grade.sequences=c("5", "8"),
+		sgp.baseline.grade.sequences.lags=3),
+	list(
+		sgp.baseline.content.areas=rep("ELA", 2),
+		sgp.baseline.panel.years=c("2016", "2019"),
+		sgp.baseline.grade.sequences=c("7", "10"),
+		sgp.baseline.grade.sequences.lags=3)
 )
