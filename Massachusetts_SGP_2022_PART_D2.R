@@ -69,7 +69,7 @@ SGPstateData[["MA"]][["SGP_Configuration"]][["max.forward.projection.sequence"]]
 Massachusetts_SGP <- abcSGP(
         Massachusetts_SGP,
         years = "2022",
-        steps=c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
+        steps=c("prepareSGP", "analyzeSGP", "combineSGP"),
         sgp.config=MA_BASELINE_CONFIG,
         sgp.percentiles=FALSE,
         sgp.projections=FALSE,

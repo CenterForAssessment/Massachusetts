@@ -86,7 +86,7 @@ names(Massachusetts_SGP@SGP[["SGPercentiles"]])[sgps.2022.baseline] <- gsub(".20
 
 Massachusetts_SGP <- abcSGP(
         sgp_object = Massachusetts_SGP,
-        steps = c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
+        steps = c("prepareSGP", "analyzeSGP", "combineSGP"),
         sgp.config = MA_BASELINE_CONFIG,
         sgp.percentiles = FALSE,
         sgp.projections = FALSE,
@@ -99,4 +99,4 @@ Massachusetts_SGP <- abcSGP(
 )
 
 ###   Save results
-#save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
+save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
