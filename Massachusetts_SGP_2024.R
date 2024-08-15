@@ -1,6 +1,6 @@
 ####################################################################################################
 ###                                                                                              ###
-###          SGP STRAIGHT BASELINE-REFERENCED projections for skip year SGP analyses for 2023    ###
+###          SGP STRAIGHT BASELINE-REFERENCED projections for skip year SGP analyses for 2024    ###
 ###                                                                                              ###
 ####################################################################################################
 
@@ -10,19 +10,19 @@ require(SGPmatrices)
 
 ###   Load data
 load("Data/Massachusetts_SGP.Rdata")
-load("Data/Massachusetts_Data_LONG_2023.Rdata")
+load("Data/Massachusetts_Data_LONG_2024.Rdata")
 
 ###   Load configurations
-source("SGP_CONFIG/2023/ELA.R")
-source("SGP_CONFIG/2023/MATHEMATICS.R")
+source("SGP_CONFIG/2024/ELA.R")
+source("SGP_CONFIG/2024/MATHEMATICS.R")
 
-MA_CONFIG <- c(ELA_2023.config, MATHEMATICS_2023.config)
+MA_CONFIG <- c(ELA_2024.config, MATHEMATICS_2024.config)
 
 ### Parameters
 parallel.config <- list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=4, BASELINE_PERCENTILES=4, PROJECTIONS=4, LAGGED_PROJECTIONS=4, SGP_SCALE_SCORE_TARGETS=4))
 
 ###   Add Baseline matrices to SGPstateData
-SGPstateData <- addBaselineMatrices("MA", "2023")
+SGPstateData <- addBaselineMatrices("MA", "2024")
 
 #  Establish required meta-data for STRAIGHT projection sequences
 SGPstateData[["MA"]][["SGP_Configuration"]][["grade.projection.sequence"]] <- list(
@@ -75,16 +75,16 @@ SGPstateData[["MA"]][["SGP_Configuration"]][["max.forward.projection.sequence"]]
 
 Massachusetts_SGP <- updateSGP(
         Massachusetts_SGP,
-	Massachusetts_Data_LONG_2023,
+	Massachusetts_Data_LONG_2024,
         steps=c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
         sgp.config=MA_CONFIG,
         sgp.percentiles=TRUE,
-        sgp.projections=TRUE,
-        sgp.projections.lagged=TRUE,
+        sgp.projections=FALSE,
+        sgp.projections.lagged=FALSE,
         sgp.percentiles.baseline=TRUE,
-        sgp.projections.baseline=TRUE,
-        sgp.projections.lagged.baseline=TRUE,
-        sgp.target.scale.scores=TRUE,
+        sgp.projections.baseline=FALSE,
+        sgp.projections.lagged.baseline=FALSE,
+        sgp.target.scale.scores=FALSE,
         save.intermediate.results=FALSE,
         parallel.config=parallel.config
 )
