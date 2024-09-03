@@ -1,6 +1,6 @@
 ################################################################################
 ###                                                                          ###
-###          SGP STRAIGHT projections for skip year SGP analyses for 2021    ###
+###   SGP STRAIGHT projections for skip year SGP analyses for 2021           ###
 ###                                                                          ###
 ################################################################################
 

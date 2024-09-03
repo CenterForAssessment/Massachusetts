@@ -25,7 +25,7 @@ MA_CONFIG <- c(ELA_2021.config, MATHEMATICS_2021.config)
 parallel.config <- list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=4, BASELINE_PERCENTILES=4, PROJECTIONS=4, LAGGED_PROJECTIONS=4, SGP_SCALE_SCORE_TARGETS=4))
 
 #####
-###   Run updateSGP :which(x, arr.ind = FALSE, useNames = TRUE)analysis
+###   Run updateSGP analysis 
 #####
 
 Massachusetts_SGP <- updateSGP(
@@ -42,11 +42,6 @@ Massachusetts_SGP <- updateSGP(
         save.intermediate.results = FALSE,
         parallel.config = parallel.config
 )
-
-### Copy SCALE_SCORE_PRIOR and SCALE_SCORE_PRIOR_STANDARDIZED to BASELINE counter parts
-
-Massachusetts_SGP@Data[YEAR=="2021", SCALE_SCORE_PRIOR_BASELINE:=SCALE_SCORE_PRIOR]
-Massachusetts_SGP@Data[YEAR=="2021", SCALE_SCORE_PRIOR_STANDARDIZED_BASELINE:=SCALE_SCORE_PRIOR_STANDARDIZED]
 
 ###   Save results
 save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")

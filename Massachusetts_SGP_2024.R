@@ -79,15 +79,15 @@ Massachusetts_SGP <- updateSGP(
         steps=c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
         sgp.config=MA_CONFIG,
         sgp.percentiles=TRUE,
-        sgp.projections=FALSE,
-        sgp.projections.lagged=FALSE,
+        sgp.projections=TRUE,
+        sgp.projections.lagged=TRUE,
         sgp.percentiles.baseline=TRUE,
         sgp.projections.baseline=FALSE,
         sgp.projections.lagged.baseline=FALSE,
-        sgp.target.scale.scores=FALSE,
+        sgp.target.scale.scores=TRUE,
         save.intermediate.results=FALSE,
         parallel.config=parallel.config
 )
 
 ###   Save results
-save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
+#save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")

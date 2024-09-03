@@ -30,7 +30,7 @@ MATHEMATICS_2024.config <- list(
                  sgp.grade.sequences=list(c("6", "7", "8")),
                  sgp.projection.sequence="MATHEMATICS_GRADE_8"),
      MATHEMATICS.2024 = list(
-                 sgp.content.areas=c("MATHEMATICS", "MATHEMATICS"),
+                 sgp.content.areas=c("MATHEMATICS", "MATHEMATICS", "MATHEMATICS"),
                  sgp.panel.years=c("2021", "2022", "2024"),
                  sgp.grade.sequences=list(c("7", "8", "10")),
                  sgp.projection.sequence="MATHEMATICS_GRADE_10")

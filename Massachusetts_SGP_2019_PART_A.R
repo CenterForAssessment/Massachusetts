@@ -7,14 +7,17 @@
 ### Load necessary packages
 require(SGP)
 require(data.table)
-#debug(equate:::equate.freqtab)
-
 
 ###   Load the results data from the 'official' 2019 SGP analyses
 load("Data/Archive/PRE_2020/Massachusetts_SGP_LONG_Data.Rdata")
+load("Data/Base_Files/Massachusetts_Data_LONG_2019_2024 Adj.Rdata")
 
 ###   Create a smaller subset of the LONG data to work with.
-Massachusetts_Baseline_Data <- data.table::data.table(Massachusetts_SGP_LONG_Data[YEAR >= "2016", c("VALID_CASE", "CONTENT_AREA", "YEAR", "ID", "GRADE", "SCALE_SCORE", "ACHIEVEMENT_LEVEL"),])
+Massachusetts_Baseline_Data <- rbindlist(list(
+			data.table::data.table(Massachusetts_SGP_LONG_Data[YEAR >= "2016" & YEAR < "2019", c("VALID_CASE", "CONTENT_AREA", "YEAR", "ID", "GRADE", "SCALE_SCORE", "ACHIEVEMENT_LEVEL"),]),
+			Mass_2019[,c("VALID_CASE", "CONTENT_AREA", "YEAR", "ID", "GRADE", "SCALE_SCORE", "ACHIEVEMENT_LEVEL"), with=FALSE]
+	)
+)
 
 ### Modify knots/boundaries in SGPstateData to use equated scale scores properly
 SGPstateData[["MA"]][["Achievement"]][["Knots_Boundaries"]][["ELA.2015"]] <- SGPstateData[["MA"]][["Achievement"]][["Knots_Boundaries"]][["ELA.2017"]]
@@ -72,12 +75,15 @@ MA_Baseline_Matrices <- baselineSGP(
 ###   Save results
 save(MA_Baseline_Matrices, file="Data/MA_Baseline_Matrices.Rdata")
 
+### Create SCALE_SCORE_NON_EQUATED and turn (2016) SCALE_SCORE into SCALE_SCORE_EQUATED to Massachusetts_SGP_LONG_Data and save results
+Massachusetts_SGP_LONG_Data <- rbindlist(list(
+			Massachusetts_SGP_LONG_Data[YEAR >= 2016 & YEAR < 2019 & CONTENT_AREA %in% c("ELA", "MATHEMATICS")],
+			Mass_2019
+	), fill=TRUE
+)
+setkey(Massachusetts_SGP_LONG_Data, VALID_CASE, CONTENT_AREA, YEAR, GRADE, ID)
+setkey(Massachusetts_Baseline_Data, VALID_CASE, CONTENT_AREA, YEAR, GRADE, ID)
+Massachusetts_SGP_LONG_Data[,SCALE_SCORE_NON_EQUATED:=SCALE_SCORE]
+Massachusetts_SGP_LONG_Data[,SCALE_SCORE:=Massachusetts_Baseline_Data$SCALE_SCORE]
 
-# ### Create SCALE_SCORE_NON_EQUATED and turn (2016) SCALE_SCORE into SCALE_SCORE_EQUATED to Massachusetts_SGP_LONG_Data and save results
-# Massachusetts_SGP_LONG_Data <- Massachusetts_SGP_LONG_Data[YEAR >= 2016 & CONTENT_AREA %in% c("ELA", "MATHEMATICS")]
-# setkey(Massachusetts_SGP_LONG_Data, VALID_CASE, CONTENT_AREA, YEAR, GRADE, ID)
-# setkey(Massachusetts_Baseline_Data, VALID_CASE, CONTENT_AREA, YEAR, GRADE, ID)
-# Massachusetts_SGP_LONG_Data[,SCALE_SCORE_NON_EQUATED:=SCALE_SCORE]
-# Massachusetts_SGP_LONG_Data[,SCALE_SCORE:=Massachusetts_Baseline_Data$SCALE_SCORE]
-
-# save(Massachusetts_SGP_LONG_Data, file="Data/Massachusetts_SGP_LONG_Data.Rdata")
+save(Massachusetts_SGP_LONG_Data, file="Data/Massachusetts_SGP_LONG_Data.Rdata")

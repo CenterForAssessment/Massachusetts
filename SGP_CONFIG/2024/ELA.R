@@ -30,7 +30,7 @@ ELA_2024.config <- list(
                  sgp.grade.sequences=list(c("6", "7", "8")),
                  sgp.projection.sequence="ELA_GRADE_8"),
      ELA.2024 = list(
-                 sgp.content.areas=c("ELA", "ELA"),
+                 sgp.content.areas=c("ELA", "ELA", "ELA"),
                  sgp.panel.years=c("2021", "2022", "2024"),
                  sgp.grade.sequences=list(c("7", "8", "10")),
                  sgp.projection.sequence="ELA_GRADE_10")
