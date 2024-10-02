@@ -26,50 +26,14 @@ SGPstateData <- addBaselineMatrices("MA", "2024")
 
 #  Establish required meta-data for STRAIGHT projection sequences
 SGPstateData[["MA"]][["SGP_Configuration"]][["grade.projection.sequence"]] <- list(
-    ELA_GRADE_3=c(3, 4, 5, 6, 7, 8, 10),
-    ELA_GRADE_4=c(3, 4, 5, 6, 7, 8, 10),
-    ELA_GRADE_5=c(3, 4, 5, 6, 7, 8, 10),
-    ELA_GRADE_6=c(3, 4, 5, 6, 7, 8, 10),
-    ELA_GRADE_7=c(3, 4, 5, 6, 7, 8, 10),
-    ELA_GRADE_8=c(3, 4, 5, 6, 7, 8, 10),
-    ELA_GRADE_10=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_3=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_4=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_5=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_6=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_7=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_8=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_10=c(3, 4, 5, 6, 7, 8, 10))
+    ELA=c(3, 4, 5, 6, 7, 8, 10),
+    MATHEMATICS=c(3, 4, 5, 6, 7, 8, 10))
 SGPstateData[["MA"]][["SGP_Configuration"]][["content_area.projection.sequence"]] <- list(
-    ELA_GRADE_3=rep("ELA", 7),
-    ELA_GRADE_4=rep("ELA", 7),
-    ELA_GRADE_5=rep("ELA", 7),
-    ELA_GRADE_6=rep("ELA", 7),
-    ELA_GRADE_7=rep("ELA", 7),
-    ELA_GRADE_8=rep("ELA", 7),
-    ELA_GRADE_10=rep("ELA", 7),
-    MATHEMATICS_GRADE_3=rep("MATHEMATICS", 7),
-    MATHEMATICS_GRADE_4=rep("MATHEMATICS", 7),
-    MATHEMATICS_GRADE_5=rep("MATHEMATICS", 7),
-    MATHEMATICS_GRADE_6=rep("MATHEMATICS", 7),
-    MATHEMATICS_GRADE_7=rep("MATHEMATICS", 7),
-    MATHEMATICS_GRADE_8=rep("MATHEMATICS", 7),
-    MATHEMATICS_GRADE_10=rep("MATHEMATICS", 7))
+    ELA=rep("ELA", 7),
+    MATHEMATICS=rep("MATHEMATICS", 7))
 SGPstateData[["MA"]][["SGP_Configuration"]][["max.forward.projection.sequence"]] <- list(
-    ELA_GRADE_3=6,
-    ELA_GRADE_4=6,
-    ELA_GRADE_5=6,
-    ELA_GRADE_6=6,
-    ELA_GRADE_7=6,
-    ELA_GRADE_8=6,
-    ELA_GRADE_10=6,
-    MATHEMATICS_GRADE_3=6,
-    MATHEMATICS_GRADE_4=6,
-    MATHEMATICS_GRADE_5=6,
-    MATHEMATICS_GRADE_6=6,
-    MATHEMATICS_GRADE_7=6,
-    MATHEMATICS_GRADE_8=6,
-    MATHEMATICS_GRADE_10=6)
+    ELA=6,
+    MATHEMATICS=6)
 
 ###   Run analysis
 
@@ -82,8 +46,8 @@ Massachusetts_SGP <- updateSGP(
         sgp.projections=TRUE,
         sgp.projections.lagged=TRUE,
         sgp.percentiles.baseline=TRUE,
-        sgp.projections.baseline=FALSE,
-        sgp.projections.lagged.baseline=FALSE,
+        sgp.projections.baseline=TRUE,
+        sgp.projections.lagged.baseline=TRUE,
         sgp.target.scale.scores=TRUE,
         save.intermediate.results=FALSE,
         parallel.config=parallel.config
