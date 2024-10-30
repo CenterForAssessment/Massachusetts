@@ -13,7 +13,7 @@ MATHEMATICS_2022.config <- list(
        sgp.projection.baseline.content.areas=c("MATHEMATICS"),
        sgp.projection.baseline.panel.years=c("2022"),
        sgp.projection.baseline.grade.sequences=list(c("3")),
-       sgp.projection.sequence="MATHEMATICS_GRADE_3"),
+       sgp.projection.sequence="MATHEMATICS"),
    MATHEMATICS.2022 = list(
        sgp.content.areas=c("MATHEMATICS", "MATHEMATICS"),
        sgp.baseline.content.areas=c("MATHEMATICS", "MATHEMATICS"),
@@ -24,7 +24,7 @@ MATHEMATICS_2022.config <- list(
        sgp.projection.baseline.content.areas=c("MATHEMATICS"),
        sgp.projection.baseline.panel.years=c("2022"),
        sgp.projection.baseline.grade.sequences=list(c("4")),
-       sgp.projection.sequence="MATHEMATICS_GRADE_4"),
+       sgp.projection.sequence="MATHEMATICS"),
    MATHEMATICS.2022 = list(
        sgp.content.areas=c("MATHEMATICS", "MATHEMATICS"),
        sgp.baseline.content.areas=c("MATHEMATICS", "MATHEMATICS"),
@@ -35,7 +35,7 @@ MATHEMATICS_2022.config <- list(
        sgp.projection.baseline.content.areas=c("MATHEMATICS"),
        sgp.projection.baseline.panel.years=c("2022"),
        sgp.projection.baseline.grade.sequences=list(c("5")),
-       sgp.projection.sequence="MATHEMATICS_GRADE_5"),
+       sgp.projection.sequence="MATHEMATICS"),
    MATHEMATICS.2022 = list(
        sgp.content.areas=c("MATHEMATICS", "MATHEMATICS"),
        sgp.baseline.content.areas=c("MATHEMATICS", "MATHEMATICS"),
@@ -46,7 +46,7 @@ MATHEMATICS_2022.config <- list(
        sgp.projection.baseline.content.areas=c("MATHEMATICS"),
        sgp.projection.baseline.panel.years=c("2022"),
        sgp.projection.baseline.grade.sequences=list(c("6")),
-       sgp.projection.sequence="MATHEMATICS_GRADE_6"),
+       sgp.projection.sequence="MATHEMATICS"),
    MATHEMATICS.2022 = list(
        sgp.content.areas=c("MATHEMATICS", "MATHEMATICS"),
        sgp.baseline.content.areas=c("MATHEMATICS", "MATHEMATICS"),

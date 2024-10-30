@@ -56,20 +56,20 @@ SGPstateData[["MA"]][["SGP_Configuration"]][["content_area.projection.sequence"]
     MATHEMATICS_GRADE_8=rep("MATHEMATICS", 6),
     MATHEMATICS_GRADE_10=rep("MATHEMATICS", 7))
 SGPstateData[["MA"]][["SGP_Configuration"]][["max.forward.projection.sequence"]] <- list(
-    ELA_GRADE_3=3,
-    ELA_GRADE_4=3,
-    ELA_GRADE_5=3,
-    ELA_GRADE_6=3,
-    ELA_GRADE_7=3,
-    ELA_GRADE_8=3,
-    ELA_GRADE_10=3,
-    MATHEMATICS_GRADE_3=3,
-    MATHEMATICS_GRADE_4=3,
-    MATHEMATICS_GRADE_5=3,
-    MATHEMATICS_GRADE_6=3,
-    MATHEMATICS_GRADE_7=3,
-    MATHEMATICS_GRADE_8=3,
-    MATHEMATICS_GRADE_10=3)
+    ELA_GRADE_3=6,
+    ELA_GRADE_4=6,
+    ELA_GRADE_5=6,
+    ELA_GRADE_6=6,
+    ELA_GRADE_7=6,
+    ELA_GRADE_8=6,
+    ELA_GRADE_10=6,
+    MATHEMATICS_GRADE_3=6,
+    MATHEMATICS_GRADE_4=6,
+    MATHEMATICS_GRADE_5=6,
+    MATHEMATICS_GRADE_6=6,
+    MATHEMATICS_GRADE_7=6,
+    MATHEMATICS_GRADE_8=6,
+    MATHEMATICS_GRADE_10=6)
 
 
 ### Run analysis
@@ -88,6 +88,5 @@ Massachusetts_SGP <- abcSGP(
         parallel.config=parallel.config
 )
 
-
 ###  Save results
-#save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
+save(Massachusetts_SGP, file="Data/Massachusetts_SGP.Rdata")
