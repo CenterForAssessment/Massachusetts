@@ -26,20 +26,14 @@ SGPstateData[["MA"]][["SGP_Configuration"]][["sgp.target.scale.scores.merge"]] <
 
 #  Establish required meta-data for STRAIGHT projection sequences
 SGPstateData[["MA"]][["SGP_Configuration"]][["grade.projection.sequence"]] <- list(
-    ELA=c(3, 4, 5, 6, 7, 8, 10),
-    ELA_GRADE_7=c(3, 4, 5, 6, 7, 8),
-    MATHEMATICS=c(3, 4, 5, 6, 7, 8, 10),
-    MATHEMATICS_GRADE_7=c(3, 4, 5, 6, 7, 8))
+    ELA=c(3, 4, 5, 6, 7, 8),
+    MATHEMATICS=c(3, 4, 5, 6, 7, 8))
 SGPstateData[["MA"]][["SGP_Configuration"]][["content_area.projection.sequence"]] <- list(
-    ELA=rep("ELA", 7),
-    ELA_GRADE_7=rep("ELA", 6),
-    MATHEMATICS=rep("MATHEMATICS", 7),
-    MATHEMATICS_GRADE_7=rep("MATHEMATICS", 6))
+    ELA=rep("ELA", 6),
+    MATHEMATICS=rep("MATHEMATICS", 6))
 SGPstateData[["MA"]][["SGP_Configuration"]][["max.forward.projection.sequence"]] <- list(
     ELA=6,
-    ELA_GRADE_7=6,
-    MATHEMATICS=6,
-    MATHEMATICS_GRADE_7=6)
+    MATHEMATICS=6)
 
 ###   Run analysis
 

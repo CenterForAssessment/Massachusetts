@@ -57,5 +57,5 @@ ELA_2022.config <- list(
        sgp.projection.baseline.content.areas=c("ELA"),
        sgp.projection.baseline.panel.years=c("2022"),
        sgp.projection.baseline.grade.sequences=list(c("7")),
-       sgp.projection.sequence="ELA_GRADE_7")
+       sgp.projection.sequence="ELA")
 )
